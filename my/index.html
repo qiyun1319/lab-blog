@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-ico" href="images/logo.ico" />
+  <title>亓韻堂-首頁</title>
+  <!-- <link rel="stylesheet" href="./icon/iconfont.css"> -->
+  <style type="text/css">
+    .icon::before {
+      /* content: url(images/login.png); */
+      content: '';
+      display: inline-block;
+      background: url(images/login.png);
+      background-size: cover;
+      /*按照图片的比例放大或者缩小至充满容器，而不是按照容器的比例大小来缩放。 */
+      width: 35px;
+      height: 35px;
+    }
+
+    .icon-cancel::before {
+      content: '';
+      display: inline-block;
+      background: url(images/register.png);
+      background-size: cover;
+      /*按照图片的比例放大或者缩小至充满容器，而不是按照容器的比例大小来缩放。 */
+      width: 35px;
+      height: 35px;
+    }
+  </style>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    html,
+    body,
+    .home {
+      width: 100%;
+      height: 100%;
+    }
+
+    .home {
+      background-image: url(images/bg.jpg);
+      position: relative;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 130px;
+      justify-content: center;
+    }
+
+    .header-top {
+      width: 900px;
+      /* flex: 1; */
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: rgba(0, 0, 0, 0.3);
+      /* background: rgba(45, 50, 55, 0.7); */
+      /* background-color: transparent; */
+      border-radius: 10px;
+      height: 30%;
+    }
+
+    .header-top li a {
+      text-decoration: none;
+      font-size: 25px;
+      color: aliceblue;
+    }
+
+    .header-top li a:hover {
+      color: crimson;
+    }
+
+    .content {
+      width: 50px;
+      height: 300px;
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 999;
+      background: rgba(45, 50, 55, 0.7);
+      border-radius: 15px 0 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .content ul {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      /* space-around     平均分佈 */
+      /* space-between    首尾分佈 */
+    }
+
+    .content .icon {
+      line-height: 45px;
+      font-size: 29px;
+      padding-left: 5px;
+    }
+
+    .content li {
+      text-align: center;
+      
+    }
+
+    .content li a {
+      color: #fff;
+    }
+
+    .icon {
+      font-family: "iconfont" !important;
+      font-size: 16px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+      top: 12px;
+    }
+
+    .content .h6-login {
+      position: absolute;
+      z-index: 1;
+      top: 15%;
+      right: -15%;
+      margin: -13px 10px 0 0;
+      line-height: 26px;
+      font-size: 12px;
+      background: rgba(45, 50, 55, 0.7);
+      color: #fff;
+      width: 70px;
+      border-radius: 2px;
+      text-align: center;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      font-weight: normal;
+    }
+  
+    .content .h6-login i {
+      position: absolute;
+      right: -4px;
+      top: 10%;
+      margin-top: 5px;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      vertical-align: middle;
+      border-left: 4px solid rgba(45, 50, 55, 0.7);
+      border-top: 4px solid rgba(0, 0, 0, 0);
+      border-bottom: 4px solid rgba(0, 0, 0, 0);
+    }
+
+    .content .h6-registry {
+      position: absolute;
+      z-index: 1;
+      top: 38.5%;
+      right: -15%;
+      margin: -13px 10px 0 0;
+      line-height: 26px;
+      font-size: 12px;
+      background: rgba(45, 50, 55, 0.7);
+      color: #fff;
+      width: 70px;
+      border-radius: 2px;
+      text-align: center;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      font-weight: normal;
+    }
+
+    .content .h6-registry i {
+      position: absolute;
+      right: -4px;
+      top: 10%;
+      margin-top: 5px;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      vertical-align: middle;
+      border-left: 4px solid rgba(45, 50, 55, 0.7);
+      border-top: 4px solid rgba(0, 0, 0, 0);
+      border-bottom: 4px solid rgba(0, 0, 0, 0);
+    }
+
+    .content h6:hover {
+      opacity: 0.9;
+      right: 90%;
+      border-radius: 4px;
+    }
+
+    h6 {
+      display: block;
+      font-size: 0.67em;
+      margin-block-start: 2.33em;
+      margin-block-end: 2.33em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+    }
+
+    .content li::after {
+      content: "";
+      height: 2px;
+      background: #747787;
+      bottom: -1px;
+      left: calc(55% - 15px);
+      width: 30px;
+      position: absolute;
+      top: 79px;
+      justify-content: space-around;
+    }
+
+    .content .li-registry::after{
+      content: "";
+      height: 2px;
+      background: #747787;
+      bottom: -1px;
+      left: calc(55% - 15px);
+      width: 30px;
+      position: absolute;
+      top: 170px;
+    }
+
+    .home .footer {
+      display: flex;
+      position: absolute;
+      z-index: 9;
+      clear: both;
+      padding: 90px 10px;
+      font-size: 12px;
+      text-align: center;
+      /* color: #a7a7a7; */
+      background: rgba(45, 50, 55, 0.8);
+      height: 10%;
+      width: 100%;
+      bottom: 0;
+    }
+
+  </style>
+</head>
+
+<body oncontextmenu=self.event.returnValue=false>
+  <!--  鼠標右鍵禁用 -->
+  <div class="home">
+    <div class="header">
+      <!-- logo -->
+      <img src="images/logo.png" alt="MyLogo" style="width: 100px;padding-top: 0px;margin: 16px;cursor: none;">
+      <!-- 導航欄 -->
+      <ul class="header-top">
+        <li>
+          <a href="index.html">首頁</a>
+        </li>
+
+        <li>
+          <a href="">術數</a>
+        </li>
+
+        <li>
+          <a href="">娛樂</a>
+        </li>
+
+        <li>
+          <a href="">編程</a>
+        </li>
+
+        <li>
+          <a href="">中醫</a>
+        </li>
+
+        <li>
+          <a href="">關於</a>
+        </li>
+      </ul>
+    </div>
+    <!-- 旁邊註冊、登錄等鏈接跳轉 -->
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">
+            <i class="icon"></i>
+          </a>
+          <h6 class="h6-login">
+            登錄
+            <i></i>
+          </h6>
+        </li>
+
+        <li class="li-registry">
+          <a href="#">
+            <i class="icon-cancel"></i>
+          </a>
+          <h6 class="h6-registry"> 
+            註冊
+            <i></i>
+          </h6>
+        </li>
+       
+        <li class="li-registry">
+          <a href="#">
+            <i class="icon-cancel"></i>
+          </a>
+          <h6 class="h6-registry"> 
+            註冊
+            <i></i>
+          </h6>
+        </li>
+
+        <li class="li-registry">
+          <a href="#">
+            <i class="icon-cancel"></i>
+          </a>
+          <h6 class="h6-registry"> 
+            註冊
+            <i></i>
+          </h6>
+        </li>
+
+      </ul>
+    </div>
+
+
+
+    <!-- 底部導航欄 -->
+    <footer class="footer">
+      <div class="container">
+
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>
